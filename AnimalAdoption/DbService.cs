@@ -236,6 +236,31 @@ namespace AnimalAdoption
                 return data;
             }
         }
+
+        public int DeleteAnimal(int id)
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(_connectionString))
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = "delete from \"Animal\" where \"Id\" = @id";
+                        cmd.Parameters.AddWithValue("@id", id);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        MessageBox.Show("Başarıyla Silindi");
+                        return rowsAffected;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
+            }
+        }
     }
 
 

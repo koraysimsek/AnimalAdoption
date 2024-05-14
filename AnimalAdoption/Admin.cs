@@ -75,7 +75,16 @@ namespace AnimalAdoption
         
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            
+            var selectedRow = dgAnimals.SelectedRows[0];
+            if(selectedRow != null)
+            {
+                 int id = Convert.ToInt32(selectedRow.Cells[0].Value);
+                 var delete = dbService.DeleteAnimal(id);
+                if(delete > 0)
+                {
+                    GetAnimals();
+                }
+            }
         }
 
     }

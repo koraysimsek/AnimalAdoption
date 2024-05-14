@@ -48,6 +48,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(263, 20);
             this.txtUsername.TabIndex = 0;
+            this.txtUsername.Text = "k";
             // 
             // label1
             // 
@@ -74,6 +75,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(263, 20);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "1";
             // 
             // cbShowPassword
             // 
