@@ -261,7 +261,122 @@ namespace AnimalAdoption
                 return 0;
             }
         }
-    }
 
+        public DataTable GetAnimalsForCustomer(int? animalTypeId)
+        {
+            DataTable data = new DataTable();
+            try
+            {
+                using (var conn = new NpgsqlConnection(_connectionString))
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = "SELECT * FROM \"Animal\" where  \"AnimalTypeId\" = @animalTypeId and \"IsAdopted\" = false";
+                        cmd.Parameters.AddWithValue("@animalTypeId", animalTypeId);
+
+                        // ExecuteScalar kullanarak UserTypeId'yi döndür
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            data.Load(reader);
+
+                        }
+                        return data;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return data;
+            }
+        }
+
+        public int AddAdoption(int userId, int animalId)
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(_connectionString))
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = "INSERT INTO public.\"Adoption\" (\"UserId\", \"AnimalId\") VALUES (@userId, @animalId)";
+                        cmd.Parameters.AddWithValue("@userId", userId);
+                        cmd.Parameters.AddWithValue("@animalId", animalId);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        return rowsAffected;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
+            }
+        }
+
+        public int UpdateAnimal(int animalId, bool isAdopted)
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(_connectionString))
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = "update public.\"Animal\" set \"IsAdopted\" = @isAdopted where \"Id\" = @animalId";
+                            cmd.Parameters.AddWithValue("@isAdopted", isAdopted);
+                        cmd.Parameters.AddWithValue("@animalId", animalId);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        return rowsAffected;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
+            }
+
+        }
+        public DataTable GetCustomerAdoption(int userId)
+        {
+            DataTable data = new DataTable();
+            try
+            {
+                using (var conn = new NpgsqlConnection(_connectionString))
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        //CustomerAdoption bir view'dir
+                        cmd.CommandText = "SELECT * FROM \"CustomerAdoption\" where \"UserId\" = @userId";
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            data.Load(reader);
+
+                        }
+                        return data;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return data;
+            }
+        }
+    }
 
 }
