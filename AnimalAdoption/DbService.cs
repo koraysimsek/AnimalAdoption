@@ -146,6 +146,39 @@ namespace AnimalAdoption
             }
         }
 
+        public DataTable GetUserById(int id)
+        {
+            {
+                DataTable data = new DataTable();
+                try
+                {
+                    using (var conn = new NpgsqlConnection(_connectionString))
+                    {
+                        conn.Open();
+                        using (var cmd = new NpgsqlCommand())
+                        {
+                            cmd.Connection = conn;
+                            //CustomerAdoption bir view'dir
+                            cmd.CommandText = "SELECT * FROM \"City\"\"Adress\" where \"Id\" = @id";
+                            //cmd.Parameters.AddWithValue("@id", id);
+
+                            using (var reader = cmd.ExecuteReader())
+                            {
+                                data.Load(reader);
+
+                            }
+                            return data;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return data;
+                }
+            }
+        }
+
         public int AddAnimalType(string code, string description)
         {
             try
@@ -181,7 +214,7 @@ namespace AnimalAdoption
                 {
                     conn.Open(); // Bağlantıyı aç
 
-                   // CREATE OR REPLACE FUNCTION public."InsertAnimal"(name character varying, age integer, species character varying, typeid character varying, gender character varying, isinfertile boolean, isvaccinated boolean, isadopted boolean)
+                    // CREATE OR REPLACE FUNCTION public."InsertAnimal"(name character varying, age integer, species character varying, typeid character varying, gender character varying, isinfertile boolean, isvaccinated boolean, isadopted boolean)
 
                     // SQL komutunu oluştur
                     using (var cmd = new NpgsqlCommand("SELECT public.\"InsertAnimal\"(@Name, @Age, @Species, @TypeId, @Gender, @IsInfertile, @IsVaccinated, @IsAdopted)", conn))
@@ -331,7 +364,7 @@ namespace AnimalAdoption
                     {
                         cmd.Connection = conn;
                         cmd.CommandText = "update public.\"Animal\" set \"IsAdopted\" = @isAdopted where \"Id\" = @animalId";
-                            cmd.Parameters.AddWithValue("@isAdopted", isAdopted);
+                        cmd.Parameters.AddWithValue("@isAdopted", isAdopted);
                         cmd.Parameters.AddWithValue("@animalId", animalId);
 
                         int rowsAffected = cmd.ExecuteNonQuery();
@@ -360,8 +393,8 @@ namespace AnimalAdoption
                         cmd.Connection = conn;
                         //CustomerAdoption bir view'dir
                         cmd.CommandText = "SELECT * FROM \"CustomerAdoption\" where \"UserId\" = @userId";
+                        //cmd.Parameters.AddWithValue("@userId", userId);
                         cmd.Parameters.AddWithValue("@userId", userId);
-
                         using (var reader = cmd.ExecuteReader())
                         {
                             data.Load(reader);
@@ -377,6 +410,35 @@ namespace AnimalAdoption
                 return data;
             }
         }
-    }
 
+
+        public int UpdateAddress(int userId, string city, string address)
+        {
+            //DataTable data = new DataTable();
+            try
+            {
+                using (var conn = new NpgsqlConnection(_connectionString))
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = "update public.\"User\" set \"City\" = @city, \"Address\" = @address WHERE \"Id\" = @userId";
+                        cmd.Parameters.AddWithValue("@city", city);
+                        cmd.Parameters.AddWithValue("@address", address);
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        return rowsAffected;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata: " + ex.Message);
+                return 0;
+            }
+        }
+    }
 }

@@ -196,6 +196,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Db.txt" />
+    <None Include="Resources\edit_20dp_FILL0_wght400_GRAD0_opsz202.png" />
+    <None Include="Resources\settings_24dp_FILL0_wght400_GRAD0_opsz241.png" />
+    <None Include="Resources\add_20dp_FILL0_wght400_GRAD0_opsz204.png" />
+    <None Include="Resources\pets_20dp_FILL0_wght400_GRAD0_opsz20.png" />
+    <None Include="Resources\refresh_20dp_FILL0_wght400_GRAD0_opsz203.png" />
+    <None Include="Resources\add_20dp_FILL0_wght400_GRAD0_opsz203.png" />
+    <None Include="Resources\add_20dp_FILL0_wght400_GRAD0_opsz202.png" />
+    <None Include="Resources\delete_forever_20dp_FILL0_wght400_GRAD0_opsz20.png" />
+    <None Include="Resources\add_20dp_FILL0_wght400_GRAD0_opsz201.png" />
+    <None Include="Resources\refresh_20dp_FILL0_wght400_GRAD0_opsz202.png" />
+    <None Include="Resources\add_20dp_FILL0_wght400_GRAD0_opsz20.png" />
+    <None Include="Resources\refresh_20dp_FILL0_wght400_GRAD0_opsz201.png" />
+    <None Include="Resources\edit_20dp_FILL0_wght400_GRAD0_opsz201.png" />
+    <None Include="Resources\refresh_20dp_FILL0_wght400_GRAD0_opsz20.png" />
     <None Include="Resources\edit_20dp_FILL0_wght400_GRAD0_opsz20.png" />
     <None Include="Resources\file %282%29.png" />
     <None Include="Resources\file %281%29.png" />
@@ -221,6 +235,9 @@
     <None Include="Resources\home_24dp_FILL0_wght400_GRAD0_opsz24 %281%29.png" />
     <None Include="Resources\home_24dp_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\login_24dp_FILL0_wght400_GRAD0_opsz24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

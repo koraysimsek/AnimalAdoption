@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,17 +40,8 @@
             this.txtGEnder = new System.Windows.Forms.TextBox();
             this.chIsInfertile = new System.Windows.Forms.CheckBox();
             this.chIsVaccinated = new System.Windows.Forms.CheckBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 271);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(263, 43);
-            this.btnAdd.TabIndex = 35;
-            this.btnAdd.Text = "Ekle";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label1
             // 
@@ -66,13 +56,13 @@
             // 
             this.txtName.Location = new System.Drawing.Point(12, 21);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(263, 20);
+            this.txtName.Size = new System.Drawing.Size(131, 20);
             this.txtName.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 48);
+            this.label2.Location = new System.Drawing.Point(176, 2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 13);
             this.label2.TabIndex = 43;
@@ -80,15 +70,15 @@
             // 
             // txtAge
             // 
-            this.txtAge.Location = new System.Drawing.Point(12, 67);
+            this.txtAge.Location = new System.Drawing.Point(179, 21);
             this.txtAge.Name = "txtAge";
-            this.txtAge.Size = new System.Drawing.Size(263, 20);
+            this.txtAge.Size = new System.Drawing.Size(131, 20);
             this.txtAge.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 142);
+            this.label3.Location = new System.Drawing.Point(9, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 47;
@@ -97,7 +87,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 96);
+            this.label4.Location = new System.Drawing.Point(9, 55);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
             this.label4.TabIndex = 45;
@@ -105,24 +95,24 @@
             // 
             // txtSpecies
             // 
-            this.txtSpecies.Location = new System.Drawing.Point(12, 115);
+            this.txtSpecies.Location = new System.Drawing.Point(12, 74);
             this.txtSpecies.Name = "txtSpecies";
-            this.txtSpecies.Size = new System.Drawing.Size(263, 20);
+            this.txtSpecies.Size = new System.Drawing.Size(131, 20);
             this.txtSpecies.TabIndex = 10;
             // 
             // cmbAnimalTypes
             // 
             this.cmbAnimalTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAnimalTypes.FormattingEnabled = true;
-            this.cmbAnimalTypes.Location = new System.Drawing.Point(12, 158);
+            this.cmbAnimalTypes.Location = new System.Drawing.Point(12, 125);
             this.cmbAnimalTypes.Name = "cmbAnimalTypes";
-            this.cmbAnimalTypes.Size = new System.Drawing.Size(263, 21);
+            this.cmbAnimalTypes.Size = new System.Drawing.Size(298, 21);
             this.cmbAnimalTypes.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 187);
+            this.label5.Location = new System.Drawing.Point(176, 55);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 50;
@@ -130,15 +120,15 @@
             // 
             // txtGEnder
             // 
-            this.txtGEnder.Location = new System.Drawing.Point(12, 206);
+            this.txtGEnder.Location = new System.Drawing.Point(179, 74);
             this.txtGEnder.Name = "txtGEnder";
-            this.txtGEnder.Size = new System.Drawing.Size(263, 20);
+            this.txtGEnder.Size = new System.Drawing.Size(131, 20);
             this.txtGEnder.TabIndex = 20;
             // 
             // chIsInfertile
             // 
             this.chIsInfertile.AutoSize = true;
-            this.chIsInfertile.Location = new System.Drawing.Point(12, 248);
+            this.chIsInfertile.Location = new System.Drawing.Point(27, 161);
             this.chIsInfertile.Name = "chIsInfertile";
             this.chIsInfertile.Size = new System.Drawing.Size(105, 17);
             this.chIsInfertile.TabIndex = 25;
@@ -148,18 +138,31 @@
             // chIsVaccinated
             // 
             this.chIsVaccinated.AutoSize = true;
-            this.chIsVaccinated.Location = new System.Drawing.Point(179, 248);
+            this.chIsVaccinated.Location = new System.Drawing.Point(194, 161);
             this.chIsVaccinated.Name = "chIsVaccinated";
             this.chIsVaccinated.Size = new System.Drawing.Size(96, 17);
             this.chIsVaccinated.TabIndex = 30;
             this.chIsVaccinated.Text = "Aşıları Tam mı?";
             this.chIsVaccinated.UseVisualStyleBackColor = true;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Image = global::AnimalAdoption.Properties.Resources.add_20dp_FILL0_wght400_GRAD0_opsz204;
+            this.btnAdd.Location = new System.Drawing.Point(95, 184);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(126, 72);
+            this.btnAdd.TabIndex = 35;
+            this.btnAdd.Text = "Ekle";
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // AddAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(293, 334);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(334, 264);
             this.Controls.Add(this.chIsVaccinated);
             this.Controls.Add(this.chIsInfertile);
             this.Controls.Add(this.label5);

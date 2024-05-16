@@ -75,5 +75,11 @@ namespace AnimalAdoption
             CustomerAdoption customerAdoption = new CustomerAdoption(_customerId);
             customerAdoption.ShowDialog();
         }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings(_customerId);
+            settings.ShowDialog();
+        }
     }
 }

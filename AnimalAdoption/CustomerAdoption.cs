@@ -19,6 +19,7 @@ namespace AnimalAdoption
         private void CustomerAdoption_Load(object sender, EventArgs e)
         {
             GetCustomerAdoption();
+            //GetUserById();
         }
         
         public void GetCustomerAdoption()
@@ -27,9 +28,17 @@ namespace AnimalAdoption
             dgAdoption.DataSource = customerAdoption;
         }
 
+        //public void GetUserById()
+        //{
+        //    customerAdoption = dbService.GetUserById(_customerId);
+        //    dgAdoption.DataSource = customerAdoption;
+        //}
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             GetCustomerAdoption();
         }
+
+     
     }
 }

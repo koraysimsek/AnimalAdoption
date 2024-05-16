@@ -49,7 +49,7 @@
             this.txtDescription.Location = new System.Drawing.Point(12, 88);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(263, 84);
+            this.txtDescription.Size = new System.Drawing.Size(348, 84);
             this.txtDescription.TabIndex = 15;
             // 
             // label1
@@ -65,16 +65,18 @@
             // 
             this.txtName.Location = new System.Drawing.Point(12, 31);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(263, 20);
+            this.txtName.Size = new System.Drawing.Size(348, 20);
             this.txtName.TabIndex = 14;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 178);
+            this.btnAdd.Image = global::AnimalAdoption.Properties.Resources.add_20dp_FILL0_wght400_GRAD0_opsz202;
+            this.btnAdd.Location = new System.Drawing.Point(122, 178);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(263, 43);
+            this.btnAdd.Size = new System.Drawing.Size(153, 76);
             this.btnAdd.TabIndex = 36;
             this.btnAdd.Text = "Ekle";
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -82,7 +84,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 243);
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ClientSize = new System.Drawing.Size(372, 279);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDescription);
